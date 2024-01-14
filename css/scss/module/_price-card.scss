@@ -1,0 +1,52 @@
+.price-card {
+    overflow: hidden;
+    border: 2px solid $color_black;
+    border-radius: 6px;
+    background: $color_white;
+    // タイトル
+    &__title {
+        padding: 3.2rem 2.4rem;
+        padding-bottom: 0;
+        font-weight: 700;
+        font-size: 2.4rem;
+        text-align: center;
+    }
+    // テキスト
+    &__text {
+        padding: 2.4rem;
+        color: $color_grey;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    // リスト
+    &__list {
+        background: $color_light;
+    }
+    %__list-item {
+        padding: 1.6rem;
+        text-align: center;
+        &::before {
+            margin-right: 0.4rem;
+        }
+        &:not(:first-child) {
+            border-top: 1px dashed $color_main;
+        }
+    }
+    &__list-item {
+        @extend %__list-item;
+        &--icon-check {
+            @extend %__list-item;
+            &::before {
+                @include font_icon("check");
+            }
+        }
+    }
+    // 料金例
+    &__total {
+        padding: 1.6rem;
+        background: $color_main;
+        color: $color_white;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}

@@ -1,0 +1,61 @@
+.price-table {
+    @include responsive("pc") {
+        display: table;
+    }
+    display: block;
+    width: 100%;
+    border-top: 4px solid $color_grey_light;
+    border-collapse: collapse;
+    border-spacing: 0;
+    // table:tbody
+    &__body {
+        @include responsive("pc") {
+            display: table-row-group;
+        }
+        display: block;
+    }
+    // table:tr
+    %__row {
+        @include responsive("pc") {
+            display: table-row;
+        }
+        display: block;
+        &:not(:first-child) {
+            border-top: 2px solid $color_grey_light;
+        }
+    }
+    &__row {
+        @extend %__row;
+    }
+    // table:td
+    %__data {
+        @include responsive("pc") {
+            display: table-cell;
+        }
+        display: block;
+        padding: 1.6rem;
+    }
+    &__data {
+        @extend %__data;
+        &--title {
+            @extend %__data;
+            @include responsive("pc") {
+                width: 300px;
+                text-align: left;
+            }
+            text-align: center;
+        }
+        &--price {
+            @extend %__data;
+            @include responsive("pc") {
+                width: 150px;
+            }
+            background: $color_light;
+            text-align: center;
+        }
+        &--description {
+            @extend %__data;
+            color: $color_grey;
+        }
+    }
+}

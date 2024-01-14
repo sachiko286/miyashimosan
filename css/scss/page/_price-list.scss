@@ -1,0 +1,22 @@
+// price-list
+.price-list {
+    // container
+    &__container{
+        @include container("default");
+    }
+    // heading
+    &__heading {
+        margin-bottom:6.4rem;
+    }
+    &__heading-sub {
+        margin-bottom:3.2rem;
+    }
+    // table
+    &__table{
+        margin-bottom:6.4rem;
+    }
+    // guide
+    &__guide {
+        margin-top:6.4rem;
+    }
+}
